@@ -1,3 +1,9 @@
 .Navbarcolor{
     background-color: #fff !important;
 }
+
+#linkColor{
+    background: #AC7F34 !important; 
+    color: #fff;
+    padding: 15px 24px;
+}

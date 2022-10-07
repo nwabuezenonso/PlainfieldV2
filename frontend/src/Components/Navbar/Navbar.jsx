@@ -76,7 +76,7 @@ function Navbar(props) {
               <Button href={'/Events'} sx={{ color: "#000" }}> Events</Button>
               <Button href={'/Gallery'} sx={{ color: "#000" }}> Gallery</Button>
               <Button href={'/Sermon'} sx={{ color: "#000" }}> Sermon</Button>
-              <Button href={'/Contact'} sx={{ color: "#000" }}> Contact</Button>
+              <Button id="linkColor" href={'/Contact'} sx={{ color: "#000" }}> Contact</Button>
             </Box>
             <IconButton
               color="inherit"

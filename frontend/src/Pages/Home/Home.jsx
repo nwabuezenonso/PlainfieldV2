@@ -4,25 +4,6 @@ const Header = () => {
   return (
     <div>
       Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-      Header
-
     </div>
   )
 }

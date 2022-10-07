@@ -1,16 +1,18 @@
 import React, {useState} from 'react';
 import './Navbar.css';
 import PropTypes from "prop-types";
-import {AppBar, Box,Divider, Drawer, Toolbar, List, ListItem, ListItemButton, ListItemText, Typography, Button, IconButton } from '@mui/material';
+import {AppBar, Box,Divider, Drawer, Toolbar, List, ListItem, ListItemButton, ListItemText, Button, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import images from '../../assets'
+import images from '../../assets';
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Events", "Gallery", "Sermon", "Contact"];
+const navItems = ["Home", "About", "Event", "Gallery", "Sermon", "Contact"];
 
 function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -18,14 +20,14 @@ function Navbar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <img alt="messiahplainfieldlogo " src={images.Logo} />
+      <img alt="messiah plainfield logo " src={images.Logo} />
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
+          <ListItem  href={`/${item}`} key={item} disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText primary={item} />
+              </ListItemButton>
           </ListItem>
         ))}
       </List>

@@ -63,7 +63,7 @@ function Navbar(props) {
     return (
       <Box sx={{ display: "flex" }}>
         <AppBar className='Navbarcolor' component="nav">
-          <Toolbar>
+          <Toolbar className='container'>
             <Box
               component="div"
               sx={{ flexGrow: 1, display: { xs: "block", sm: "block" } }}
@@ -71,12 +71,12 @@ function Navbar(props) {
               <img alt="messiah plainfield logo" width={80} src={images.Logo} />
             </Box>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              <Button href={'/'} sx={{ color: "#000" }}> Home</Button>
-              <Button href={'/About'} sx={{ color: "#000" }}> About</Button>
-              <Button href={'/Events'} sx={{ color: "#000" }}> Events</Button>
-              <Button href={'/Gallery'} sx={{ color: "#000" }}> Gallery</Button>
-              <Button href={'/Sermon'} sx={{ color: "#000" }}> Sermon</Button>
-              <Button id="linkColor" href={'/Contact'} sx={{ color: "#000" }}> Contact</Button>
+              <Button className='latoBold' href={'/'} sx={{ color: "#000" }}> Home</Button>
+              <Button className='latoBold' href={'/About'} sx={{ color: "#000" }}> About</Button>
+              <Button className='latoBold' href={'/Events'} sx={{ color: "#000" }}> Events</Button>
+              <Button className='latoBold' href={'/Gallery'} sx={{ color: "#000" }}> Gallery</Button>
+              <Button className='latoBold' href={'/Sermon'} sx={{ color: "#000" }}> Sermon</Button>
+              <Button className='latoBold' id="linkColor" href={'/Contact'} sx={{ color: "#000" }}> Contact</Button>
             </Box>
             <IconButton
               color="inherit"

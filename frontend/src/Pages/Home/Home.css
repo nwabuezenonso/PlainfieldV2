@@ -1,4 +1,41 @@
 .hero_background_img{
-    background-image: url('../../assets/Hero_img.png');
+    background-image: url('../../assets/Hero_img2.png');
+    background-position: 0 36%;
     height: 100vh;
+}
+
+.overlay{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.hero_heading{
+    position: absolute;
+    padding: 250px 0 0 140px;
+    margin-bottom: 24px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 82px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    width: 960px;
+}
+
+.hero_body{
+    position: absolute;
+    top: 420px;
+    padding-left: 140px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    width: 550px;
+    color: #FFFFFF;
 }

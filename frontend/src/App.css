@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+.latoBold{
+    font-family: 'Lato';
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+.hero_body{
+    padding-left: 140px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    width: 550px;
+    color: #FFFFFF;
+}

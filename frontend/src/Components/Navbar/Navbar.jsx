@@ -1,40 +1,98 @@
-import React from 'react';
-// import { GiHamburgerMenu } from 'react-icons/gi';
-// import { MdOutlineRestaurantMenu } from 'react-icons/md';
-// import { Link } from "react-router-dom";
+import React, {useState} from 'react';
 import './Navbar.css';
+import PropTypes from "prop-types";
+import {AppBar, Box,Divider, Drawer, Toolbar, List, ListItem, ListItemButton, ListItemText, Typography, Button, IconButton } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import images from '../../assets'
 
-function Navbar() {
-    return (
-      <nav className="app__navbar">
-        <div className="app__navbar-logo">
-          <img src={images.Logo} alt="app__logo" />
-        </div>
-        <ul className="app__navbar-links">
-          <li className="p__opensans"><a href="#home">Home</a></li>
-          <li className="p__opensans"><a href="#about">About</a></li>
-          <li className="p__opensans"><a href="#menu">Menu</a></li>
-          <li className="p__opensans"><a href="#awards">Awards</a></li>
-          <li className="p__opensans"><a href="#contact">Contact</a></li>
-        </ul>
-        {/* <div className="app__navbar-smallscreen"> */}
-          {/* <GiHamburgerMenu color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} /> */}
-          {/* {toggleMenu && (
-            <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
-              <MdOutlineRestaurantMenu fontSize={27} className="overlay__close" onClick={() => setToggleMenu(false)} />
-              <ul className="app__navbar-smallscreen_links">
-                <li><a href="#home" onClick={() => setToggleMenu(false)}>Home</a></li>
-                <li><a href="#about" onClick={() => setToggleMenu(false)}>About</a></li>
-                <li><a href="#menu" onClick={() => setToggleMenu(false)}>Menu</a></li>
-                <li><a href="#awards" onClick={() => setToggleMenu(false)}>Awards</a></li>
-                <li><a href="#contact" onClick={() => setToggleMenu(false)}>Contact</a></li>
-              </ul>
-            </div>
-          )} */}
-        {/* </div> */}
-    </nav>
+const drawerWidth = 240;
+const navItems = ["Home", "About", "Events", "Gallery", "Sermon", "Contact"];
 
+function Navbar(props) {
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <img alt="messiahplainfieldlogo " src={images.Logo} />
+      <Divider />
+      <List>
+        {navItems.map((item) => (
+          <ListItem key={item} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={item} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
+    return (
+      <Box sx={{ display: "flex" }}>
+        <AppBar className='Navbarcolor' component="nav">
+          <Toolbar>
+            <Box
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: "block", sm: "block" } }}
+            >
+              <img alt="messiah plainfield logo" width={80} src={images.Logo} />
+            </Box>
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              {navItems.map((item) => (
+                <Button href={'/'+ item} key={item} sx={{ color: "#000" }}>
+                  {item}
+                </Button>
+              ))}
+            </Box>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ my: 2, color:'#000', display: { sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <Box component="nav">
+          <Drawer
+            container={container}
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true // Better open performance on mobile.
+            }}
+            sx={{
+              display: { xs: "block", sm: "none" },
+              "& .MuiDrawer-paper": {
+                boxSizing: "border-box",
+                width: drawerWidth
+              }
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </Box>
+      </Box>
     );
   }
-  export default Navbar;
+
+Navbar.propTypes = {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func
+};
+
+export default Navbar;

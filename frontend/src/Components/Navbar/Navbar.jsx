@@ -6,7 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import images from '../../assets';
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Event", "Gallery", "Sermon", "Contact"];
+// const navItems = ["Home", "About", "Event", "Gallery", "Sermon", "Contact"];
 
 function Navbar(props) {
   const { window } = props;
@@ -23,13 +23,36 @@ function Navbar(props) {
       <img alt="messiah plainfield logo " src={images.Logo} />
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem  href={`/${item}`} key={item} disablePadding>
-              <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item} />
-              </ListItemButton>
+          <ListItem href={'/'} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={'Home'} />
+            </ListItemButton>
           </ListItem>
-        ))}
+          <ListItem href={'/About'} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={'About'} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem href={'/Events'} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={'Events'} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem href={'/Gallery'} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={'Gallery'} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem href={'/Sermon'} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={'Sermon'} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem href={'/Contact'} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={'Contact'} />
+            </ListItemButton>
+          </ListItem>
       </List>
     </Box>
   );
@@ -48,11 +71,12 @@ function Navbar(props) {
               <img alt="messiah plainfield logo" width={80} src={images.Logo} />
             </Box>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              {navItems.map((item) => (
-                <Button href={'/'+ item} key={item} sx={{ color: "#000" }}>
-                  {item}
-                </Button>
-              ))}
+              <Button href={'/'} sx={{ color: "#000" }}> Home</Button>
+              <Button href={'/About'} sx={{ color: "#000" }}> About</Button>
+              <Button href={'/Events'} sx={{ color: "#000" }}> Events</Button>
+              <Button href={'/Gallery'} sx={{ color: "#000" }}> Gallery</Button>
+              <Button href={'/Sermon'} sx={{ color: "#000" }}> Sermon</Button>
+              <Button href={'/Contact'} sx={{ color: "#000" }}> Contact</Button>
             </Box>
             <IconButton
               color="inherit"

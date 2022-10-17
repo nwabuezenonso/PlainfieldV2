@@ -18,3 +18,14 @@
     width: 550px;
     color: #FFFFFF;
 }
+
+.btn{
+    position: absolute !important;
+    top: 500px !important;
+    left: 140px;
+    color: #FFFFFF !important;
+    background-color: #AC7F34 !important;
+    padding: 24px 48px !important;
+    z-index: 5;
+    border-radius: 12px !important;
+}

@@ -6,7 +6,7 @@ import './Home.css'
 
 const useStyles = styled(theme => ({
   hero_heading:{
-    paddingTop: 250,
+    paddingTop: 400,
     padding: 140,
     color: 'white',
     width: 900,
